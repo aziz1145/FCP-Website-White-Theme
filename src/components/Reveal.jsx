@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const Reveal = ({ children, className = "" }) => {
+const Reveal = ({ children, className = "", delay = 0 }) => {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
 
@@ -15,8 +15,8 @@ const Reveal = ({ children, className = "" }) => {
         }
       },
       {
-        threshold: 0.15,
-      }
+        threshold: 0.12,
+      },
     );
 
     if (element) observer.observe(element);
@@ -27,10 +27,11 @@ const Reveal = ({ children, className = "" }) => {
   return (
     <div
       ref={ref}
-      className={`transition-all duration-700 ease-out ${
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transform transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform ${
         visible
-          ? "opacity-100 translate-y-0"
-          : "opacity-0 translate-y-8"
+          ? "translate-y-0 scale-100 opacity-100"
+          : "translate-y-10 scale-[0.98] opacity-0"
       } ${className}`}
     >
       {children}

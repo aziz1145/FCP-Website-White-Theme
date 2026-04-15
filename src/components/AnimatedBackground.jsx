@@ -1,13 +1,13 @@
-const stars = Array.from({ length: 55 }, (_, index) => ({
+const stars = Array.from({ length: 90 }, (_, index) => ({
   id: index,
-  size: Math.random() * 3 + 1,
+  size: Math.random() * 4 + 2,
   top: `${Math.random() * 100}%`,
+  parallax: Math.random() * 0.3 + 0.1,
   left: `${Math.random() * 100}%`,
-  duration: `${Math.random() * 6 + 5}s`,
-  delay: `${Math.random() * 8}s`,
-  driftX: `${Math.random() * 180 - 90}px`,
-  driftY: `${Math.random() * 140 - 70}px`,
-  opacity: Math.random() * 0.5 + 0.2,
+  duration: `${Math.random() * 3 + 2.5}s`,
+  delay: `${Math.random() * 5}s`,
+  driftX: `${Math.random() * 80 - 40}px`,
+  driftY: `${Math.random() * 60 - 30}px`,
 }));
 
 const glows = [
@@ -17,13 +17,38 @@ const glows = [
   { size: 170, left: "82%", top: "20%", duration: "22s", delay: "4s" },
 ];
 
+// NEW: floating blobs
+const blobs = [
+  { size: 400, left: "10%", top: "20%", duration: "30s" },
+  { size: 350, left: "70%", top: "30%", duration: "35s" },
+  { size: 300, left: "40%", top: "70%", duration: "28s" },
+];
+
 const AnimatedBackground = () => {
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(34,197,94,0.06),transparent_34%),radial-gradient(circle_at_bottom,rgba(34,197,94,0.04),transparent_28%),linear-gradient(to_bottom,#000000,#030303,#000000)]" />
+      {/* Base Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_bottom,#e2e8f0,#cbd5e1,#94a3b8)]" />
+      {/* Floating Blobs (NEW) */}
+      {blobs.map((blob, index) => (
+        <div
+          key={index}
+          className="absolute rounded-full blur-[120px] opacity-10 animate-blobMove"
+          style={{
+            width: `${blob.size}px`,
+            height: `${blob.size}px`,
+            left: blob.left,
+            top: blob.top,
+            background:
+              "radial-gradient(circle, rgba(34,197,94, 0.30), transparent 70%)",
+            animationDuration: blob.duration,
+          }}
+        />
+      ))}
 
+      {/* Stars */}
       {stars.map((star) => (
-        <span
+        <div
           key={star.id}
           className="absolute rounded-full animate-starDrift"
           style={{
@@ -31,21 +56,21 @@ const AnimatedBackground = () => {
             height: `${star.size}px`,
             top: star.top,
             left: star.left,
-            opacity: star.opacity,
+            background: "rgba(15, 23, 42, 0.55)",
+            boxShadow: "0 0 12px rgba(15, 23, 42, 0.35)",
             animationDuration: star.duration,
             animationDelay: star.delay,
-            boxShadow: "0 0 8px var(--star)",
-            background: "var(--star)",
-            ["--drift-x"]: star.driftX,
-            ["--drift-y"]: star.driftY,
+            "--drift-x": star.driftX,
+            "--drift-y": star.driftY,
           }}
         />
       ))}
 
+      {/* Glow particles */}
       {glows.map((glow, index) => (
         <div
           key={index}
-          className="absolute rounded-full bg-green-400/5 blur-3xl animate-glowDrift"
+          className="absolute rounded-full animate-glowDrift bg-green-400/10 blur-3xl"
           style={{
             width: `${glow.size}px`,
             height: `${glow.size}px`,
@@ -53,7 +78,6 @@ const AnimatedBackground = () => {
             top: glow.top,
             animationDuration: glow.duration,
             animationDelay: glow.delay,
-            boxShadow: "0 0 90px rgba(34,197,94,0.08)",
           }}
         />
       ))}
