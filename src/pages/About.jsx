@@ -1,20 +1,24 @@
+import { useState } from "react";
 import Reveal from "../components/Reveal";
+import { teamMembers } from "../assets/data/team.js";
 
 const About = () => {
+  const [selected, setSelected] = useState(null);
+
   return (
     <div className="text-slate-900">
-      <section className="py-16 px-4 max-w-6xl mx-auto">
+      <section className="max-w-6xl mx-auto px-4 py-16">
         <Reveal>
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">
+          <div className="mb-12 text-center">
+            <h1 className="mb-4 text-4xl font-bold text-green-600 md:text-5xl">
               About Us
             </h1>
 
-            <p className="text-green-600 font-semibold mb-4">
+            <p className="mb-4 font-semibold text-green-600">
               Serving Humanity with Commitment
             </p>
 
-            <p className="text-slate-600 max-w-3xl mx-auto leading-7">
+            <p className="mx-auto max-w-3xl leading-7 text-slate-600">
               Friends Club Pakistan Welfare Foundation is committed to serving
               humanity through welfare initiatives, relief efforts, and
               community support programs across Pakistan.
@@ -22,13 +26,13 @@ const About = () => {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
           <Reveal>
-            <div className="glass-card rounded-2xl p-8 h-full">
-              <h2 className="text-2xl font-semibold mb-4 text-slate-900">
+            <div className="glass-card h-full rounded-2xl p-8">
+              <h2 className="mb-4 text-2xl font-semibold text-slate-900">
                 Our Mission
               </h2>
-              <p className="text-slate-600 leading-7">
+              <p className="leading-7 text-slate-600">
                 Our mission is to support underprivileged communities by
                 providing food assistance, medical support, relief services, and
                 other welfare initiatives with sincerity, transparency, and
@@ -38,11 +42,11 @@ const About = () => {
           </Reveal>
 
           <Reveal>
-            <div className="glass-card rounded-2xl p-8 h-full">
-              <h2 className="text-2xl font-semibold mb-4 text-slate-900">
+            <div className="glass-card h-full rounded-2xl p-8">
+              <h2 className="mb-4 text-2xl font-semibold text-slate-900">
                 Our Vision
               </h2>
-              <p className="text-slate-600 leading-7">
+              <p className="leading-7 text-slate-600">
                 Our vision is to build a society where humanity, dignity, and
                 care reach every deserving person, and where collective efforts
                 create lasting positive change.
@@ -52,11 +56,11 @@ const About = () => {
         </div>
 
         <Reveal>
-          <div className="mt-10 glass-card rounded-2xl p-8">
-            <h2 className="text-2xl font-semibold mb-4 text-slate-900">
+          <div className="glass-card mt-10 rounded-2xl p-8">
+            <h2 className="mb-4 text-2xl font-semibold text-slate-900">
               Serving Humanity with Commitment
             </h2>
-            <p className="text-slate-600 leading-7">
+            <p className="leading-7 text-slate-600">
               We have participated in multiple welfare and relief efforts
               including food distribution, Ramadan dastarkhwan, flood relief,
               medical camps, and collective Qurbani support. Our goal is to
@@ -68,25 +72,72 @@ const About = () => {
       </section>
 
       <Reveal>
-        <section className="py-16 px-4 max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-green-600 mb-4">
+        <section className="max-w-7xl mx-auto px-4 py-16 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-green-600 md:text-4xl">
             Our Supporters & Volunteers
           </h2>
 
-          <p className="text-slate-600 max-w-2xl mx-auto mb-6 leading-7">
+          <p className="mx-auto mb-6 max-w-2xl leading-7 text-slate-600">
             Our strength lies in the dedication of our supporters, volunteers,
             and community members who continuously contribute towards our
             mission.
           </p>
+        </section>
+      </Reveal>
 
-          <div className="glass-card rounded-2xl p-8 max-w-xl mx-auto">
-            <p className="text-slate-500 text-sm leading-6">
-              Photos and names of our supporters and volunteers will be shared
-              here soon.
+      <Reveal>
+        <section className="max-w-7xl mx-auto px-4 pb-20">
+          <div className="mb-10 text-center">
+            <h2 className="mb-3 text-3xl font-bold text-green-600 md:text-4xl">
+              Our Team
+            </h2>
+            <p className="mx-auto max-w-2xl text-slate-600">
+              Dedicated individuals working together to serve humanity.
             </p>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4">
+            {teamMembers.map((person, index) => (
+              <div
+                key={index}
+                onClick={() => setSelected(person)}
+                className="glass-card group cursor-pointer rounded-2xl p-4 text-center"
+              >
+                <div className="mb-3 overflow-hidden rounded-xl">
+                  <img
+                    src={person.image}
+                    alt={person.name}
+                    className="h-40 w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                </div>
+
+                <h3 className="text-sm font-semibold text-slate-800">
+                  {person.name}
+                </h3>
+              </div>
+            ))}
           </div>
         </section>
       </Reveal>
+
+      {selected && (
+        <div
+          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90"
+          onClick={() => setSelected(null)}
+        >
+          <div className="relative w-full max-w-3xl px-4">
+            <img
+              src={selected.image}
+              alt={selected.name}
+              className="max-h-[80vh] w-full rounded-xl object-contain"
+            />
+
+            <p className="mt-4 text-center text-lg font-semibold text-white">
+              {selected.name}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
