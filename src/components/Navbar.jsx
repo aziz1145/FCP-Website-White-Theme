@@ -24,13 +24,13 @@ const Navbar = () => {
   }, []);
 
   const navLinkClass = ({ isActive }) =>
-    `transition font-medium ${
+    `transition font-medium text-center w-full ${
       isActive ? "text-green-400" : "text-slate-200 hover:text-green-400"
     }`;
 
   return (
     <header
-      className={`fixed top-9 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 md:top-10 ${
+      className={`fixed top-11 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 md:top-10 ${
         scrolled
           ? "bg-slate-900/95 shadow-xl border-b border-white/10"
           : "bg-slate-900/70"
@@ -86,7 +86,8 @@ const Navbar = () => {
         {/* Mobile Menu */}
         {isOpen && (
           <div className="border-t border-white/10 bg-slate-900/95 py-4 md:hidden">
-            <nav className="flex flex-col gap-4">
+            <nav className="flex flex-col items-center gap-4 text-center">
+              {" "}
               {navLinks.map((link) => (
                 <NavLink
                   key={link.path}
@@ -97,7 +98,6 @@ const Navbar = () => {
                   {link.name}
                 </NavLink>
               ))}
-
               <Link
                 to="/support"
                 onClick={() => setIsOpen(false)}
