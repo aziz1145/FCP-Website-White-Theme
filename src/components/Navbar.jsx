@@ -45,7 +45,7 @@ const Navbar = () => {
   return (
     <header
       ref={navRef}
-      className={`fixed top-9 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 md:top-10 ${
+      className={`fixed top-7 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 md:top-10 ${
         scrolled
           ? "bg-slate-900/95 shadow-xl border-b border-white/10"
           : "bg-slate-900/80"
