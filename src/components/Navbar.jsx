@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { NavLink, Link } from "react-router-dom";
 import logo from "../assets/FCP logo.png";
 
@@ -12,15 +12,29 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const navRef = useRef(null);
 
-  // ✅ FIXED: useEffect instead of useState
+  // Scroll effect (shadow + auto close)
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
+      setIsOpen(false); // ✅ close menu on scroll
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Click outside to close
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   const navLinkClass = ({ isActive }) =>
@@ -30,10 +44,11 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-6 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 md:top-10 ${
+      ref={navRef}
+      className={`fixed top-4 left-0 right-0 z-50 backdrop-blur-md transition-all duration-300 md:top-10 ${
         scrolled
           ? "bg-slate-900/95 shadow-xl border-b border-white/10"
-          : "bg-slate-900/70"
+          : "bg-slate-900/80"
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 md:px-6">
@@ -87,7 +102,6 @@ const Navbar = () => {
         {isOpen && (
           <div className="border-t border-white/10 bg-slate-900/95 py-4 md:hidden">
             <nav className="flex flex-col items-center gap-4 text-center">
-              {" "}
               {navLinks.map((link) => (
                 <NavLink
                   key={link.path}
@@ -98,10 +112,12 @@ const Navbar = () => {
                   {link.name}
                 </NavLink>
               ))}
+
+              {/* Support Button */}
               <Link
                 to="/support"
                 onClick={() => setIsOpen(false)}
-                className="mt-2 inline-block w-fit rounded-md bg-green-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-400"
+                className="mt-2 inline-block rounded-md bg-green-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-green-400"
               >
                 Support
               </Link>
