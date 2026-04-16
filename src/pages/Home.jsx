@@ -9,19 +9,16 @@ const Home = () => {
       {/* HERO SECTION */}
       <section className="min-h-[80vh] flex flex-col justify-center items-center text-center px-4">
         <div className="relative mb-6">
-          {/* Glow */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-56 h-56 md:w-72 md:h-72 rounded-full bg-green-500/20 blur-3xl animate-pulse" />
           </div>
 
-          {/* Logo */}
           <img
             src={logo}
             alt="FCP Logo"
             className="relative w-40 h-40 md:w-52 md:h-52 object-contain"
           />
         </div>
-
         <div className="mb-4 px-4 py-1 rounded-full bg-green-100 text-green-700 text-xs md:text-sm font-semibold animate-pulse">
           Trusted Welfare Foundation Since 2005
         </div>
@@ -164,16 +161,15 @@ const Home = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="glass-card rounded-2xl p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+            <div className="glass-card rounded-2xl p-6 h-full flex flex-col">
               <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                Food & Basic Support
+                Say No to Hunger
               </h3>
 
-              <p className="text-slate-600 text-sm leading-6 mb-6">
-                Providing essential food support including ration distribution,
-                Ramadan programs, and Qurbani arrangements for deserving
-                families.
+              <p className="text-slate-600 text-sm leading-6 mb-6 flex-grow">
+                Providing ration support, cooked meals, Ramadan food programs,
+                and urgent food assistance for deserving families.
               </p>
 
               <a
@@ -184,14 +180,14 @@ const Home = () => {
               </a>
             </div>
 
-            <div className="glass-card rounded-2xl p-6">
+            <div className="glass-card rounded-2xl p-6 h-full flex flex-col">
               <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                Community Welfare & Support
+                Community Welfare
               </h3>
 
-              <p className="text-slate-600 text-sm leading-6 mb-6">
-                Supporting individuals and families through general welfare
-                initiatives, financial assistance, and community-based programs.
+              <p className="text-slate-600 text-sm leading-6 mb-6 flex-grow">
+                Supporting individuals and families through welfare initiatives,
+                financial help, and community-based assistance programs.
               </p>
 
               <a
@@ -202,14 +198,32 @@ const Home = () => {
               </a>
             </div>
 
-            <div className="glass-card rounded-2xl p-6">
+            <div className="glass-card rounded-2xl p-6 h-full flex flex-col">
               <h3 className="text-2xl font-bold text-slate-900 mb-3">
-                Relief & Health Services
+                Relief & Health
               </h3>
 
-              <p className="text-slate-600 text-sm leading-6 mb-6">
+              <p className="text-slate-600 text-sm leading-6 mb-6 flex-grow">
                 Responding to emergencies through relief efforts, medical camps,
                 and disaster support activities across affected areas.
+              </p>
+
+              <a
+                href="/projects"
+                className="premium-btn premium-btn-outline w-full"
+              >
+                Explore More
+              </a>
+            </div>
+
+            <div className="glass-card rounded-2xl p-6 h-full flex flex-col">
+              <h3 className="text-2xl font-bold text-slate-900 mb-3">
+                Education Support
+              </h3>
+
+              <p className="text-slate-600 text-sm leading-6 mb-6 flex-grow">
+                Helping students and families through educational support,
+                learning resources, and youth-focused welfare activities.
               </p>
 
               <a

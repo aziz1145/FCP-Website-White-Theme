@@ -1,4 +1,4 @@
-const stars = Array.from({ length: 90 }, (_, index) => ({
+const stars = Array.from({ length: 60 }, (_, index) => ({
   id: index,
   size: Math.random() * 4 + 2,
   top: `${Math.random() * 100}%`,
@@ -33,7 +33,7 @@ const AnimatedBackground = () => {
       {blobs.map((blob, index) => (
         <div
           key={index}
-          className="absolute rounded-full blur-[120px] opacity-10 animate-blobMove"
+          className="absolute rounded-full blur-[120px] opacity-20 animate-blobMove"
           style={{
             width: `${blob.size}px`,
             height: `${blob.size}px`,

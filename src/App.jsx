@@ -12,14 +12,12 @@ import Contact from "./pages/Contact";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
 import TopBar from "./components/TopBar";
 import ScrollToTop from "./components/ScrollToTop";
-import ScrollProgress from "./components/ScrollProgress";
 
 function App() {
   const location = useLocation();
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-transparent text-slate-900">
-      <ScrollProgress />
       <AnimatedBackground />
 
       <div className="relative z-10">

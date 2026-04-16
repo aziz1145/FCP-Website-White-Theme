@@ -1,9 +1,115 @@
 import Reveal from "../components/Reveal";
 
+const projectSections = [
+  {
+    icon: "🍽",
+    title: "Say No to Hunger",
+    description:
+      "We work to reduce hunger by providing food, ration support, and meal assistance to deserving families and individuals.",
+    items: [
+      "Ration Distribution Programs",
+      "Cooked Meal Support",
+      "Ramadan Food Campaigns",
+      "Emergency Food Assistance",
+      "Seasonal Food Drives",
+    ],
+  },
+  {
+    icon: "🤝",
+    title: "Community Welfare & Support",
+    description:
+      "Our welfare initiatives help deserving individuals and families through community-based support and organized assistance.",
+    items: [
+      "Individual Assistance Cases",
+      "Family Support Programs",
+      "General Welfare Initiatives",
+      "Financial Assistance Support",
+      "Local Area Welfare Activities",
+    ],
+  },
+  {
+    icon: "🚑",
+    title: "Relief & Health Services",
+    description:
+      "We respond to emergencies and health needs through relief work, camps, and organized support activities.",
+    items: [
+      "Flood Relief Activities",
+      "Emergency Response Support",
+      "Medical Camps",
+      "Health Assistance Programs",
+      "Disaster Relief Efforts",
+    ],
+  },
+  {
+    icon: "📚",
+    title: "Education Support",
+    description:
+      "We aim to support learning and student development through educational help and youth-centered community efforts.",
+    items: [
+      "Student Support Programs",
+      "School Supply Assistance",
+      "Learning Resource Distribution",
+      "Youth Motivation Activities",
+      "Educational Welfare Initiatives",
+    ],
+  },
+  {
+    icon: "🩸",
+    title: "Health Awareness",
+    description:
+      "We promote community wellbeing through awareness efforts, support drives, and organized health-related activities.",
+    items: [
+      "Public Health Awareness",
+      "Wellness Campaigns",
+      "Basic Screening Support",
+      "Health Education Sessions",
+      "Community Outreach Activities",
+    ],
+  },
+  {
+    icon: "🎁",
+    title: "Seasonal Welfare Campaigns",
+    description:
+      "We organize special welfare initiatives during important seasons and times of community need.",
+    items: [
+      "Ramadan Dastarkhwan",
+      "Qurbani Arrangements",
+      "Eid Welfare Distribution",
+      "Winter Support Campaigns",
+      "Special Occasion Drives",
+    ],
+  },
+  {
+    icon: "🏠",
+    title: "Family Assistance",
+    description:
+      "We support families facing hardship through direct help, coordinated welfare assistance, and essential relief.",
+    items: [
+      "Household Support",
+      "Urgent Family Relief",
+      "Needs-Based Assistance",
+      "Essential Supply Support",
+      "Family Care Initiatives",
+    ],
+  },
+  {
+    icon: "🌍",
+    title: "Public Service Initiatives",
+    description:
+      "We continue working on broader community initiatives that improve wellbeing, service access, and public trust.",
+    items: [
+      "Community Service Projects",
+      "Volunteer-Based Activities",
+      "Neighborhood Welfare Support",
+      "Public Benefit Programs",
+      "Civic Help Initiatives",
+    ],
+  },
+];
+
 const Projects = () => {
   return (
-    <div className="px-4 py-16 max-w-6xl mx-auto text-slate-900">
-      {/* Header */}
+    <div className="px-4 py-16 max-w-7xl mx-auto text-slate-900">
       <Reveal>
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold text-green-600 mb-4">
@@ -11,94 +117,37 @@ const Projects = () => {
           </h1>
 
           <p className="text-slate-600 max-w-2xl mx-auto leading-7">
-            Our work spans across multiple areas of humanitarian support,
-            reflecting our commitment to serving communities in different ways.
+            Our work spans multiple areas of humanitarian support, reflecting
+            our commitment to serving communities in practical and meaningful
+            ways.
           </p>
         </div>
       </Reveal>
 
-      {/* Timeline Container */}
-      <div className="relative ml-4 space-y-14 border-l border-slate-200 md:ml-10">
-        {/* Food & Basic Support */}
-        <Reveal>
-          <div className="relative pl-10">
-            <div className="absolute -left-5 top-1 flex h-10 w-10 items-center justify-center rounded-full border border-green-200 bg-green-50 text-lg text-green-600 shadow-sm">
-              🍽
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+        {projectSections.map((section, index) => (
+          <Reveal key={index}>
+            <div className="glass-card rounded-2xl p-6 h-full flex flex-col">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full border border-green-200 bg-green-50 text-2xl text-green-600 shadow-sm">
+                {section.icon}
+              </div>
+
+              <h2 className="mb-3 text-2xl font-semibold text-slate-900">
+                {section.title}
+              </h2>
+
+              <p className="mb-4 text-sm leading-6 text-slate-600 md:text-base">
+                {section.description}
+              </p>
+
+              <ul className="mt-auto space-y-2 text-sm text-slate-700 md:text-base">
+                {section.items.map((item, itemIndex) => (
+                  <li key={itemIndex}>• {item}</li>
+                ))}
+              </ul>
             </div>
-
-            <h2 className="mb-3 text-2xl font-semibold text-slate-900 md:text-3xl">
-              Food & Basic Support
-            </h2>
-
-            <p className="mb-4 text-sm leading-6 text-slate-600 md:text-base">
-              We focus on providing essential food and basic necessities to
-              support families and individuals in need through organized and
-              community-driven efforts.
-            </p>
-
-            <ul className="space-y-2 text-sm text-slate-700 md:text-base">
-              <li>• Food Distribution Initiatives</li>
-              <li>• Ration Support Programs</li>
-              <li>• Ramadan Dastarkhwan Arrangements</li>
-              <li>• Collective Qurbani Support</li>
-              <li>• Eid Welfare Distribution</li>
-            </ul>
-          </div>
-        </Reveal>
-
-        {/* Community Welfare */}
-        <Reveal>
-          <div className="relative pl-10">
-            <div className="absolute -left-5 top-1 flex h-10 w-10 items-center justify-center rounded-full border border-green-200 bg-green-50 text-lg text-green-600 shadow-sm">
-              🤝
-            </div>
-
-            <h2 className="mb-3 text-2xl font-semibold text-slate-900 md:text-3xl">
-              Community Welfare & Support
-            </h2>
-
-            <p className="mb-4 text-sm leading-6 text-slate-600 md:text-base">
-              Our welfare initiatives aim to support individuals and families
-              through community-based programs and assistance in different
-              situations.
-            </p>
-
-            <ul className="space-y-2 text-sm text-slate-700 md:text-base">
-              <li>• Individual Assistance Cases</li>
-              <li>• Family Support Programs</li>
-              <li>• Community Welfare Initiatives</li>
-              <li>• General Support Activities</li>
-              <li>• Local Area Assistance</li>
-            </ul>
-          </div>
-        </Reveal>
-
-        {/* Relief & Health */}
-        <Reveal>
-          <div className="relative pl-10">
-            <div className="absolute -left-5 top-1 flex h-10 w-10 items-center justify-center rounded-full border border-green-200 bg-green-50 text-lg text-green-600 shadow-sm">
-              🚑
-            </div>
-
-            <h2 className="mb-3 text-2xl font-semibold text-slate-900 md:text-3xl">
-              Relief & Health Services
-            </h2>
-
-            <p className="mb-4 text-sm leading-6 text-slate-600 md:text-base">
-              We respond to emergencies and provide health-related support
-              through organized relief efforts and medical initiatives across
-              affected areas.
-            </p>
-
-            <ul className="space-y-2 text-sm text-slate-700 md:text-base">
-              <li>• Flood Relief Activities</li>
-              <li>• Emergency Response Support</li>
-              <li>• Medical Camps</li>
-              <li>• Health Support Initiatives</li>
-              <li>• Disaster Relief Efforts</li>
-            </ul>
-          </div>
-        </Reveal>
+          </Reveal>
+        ))}
       </div>
     </div>
   );
