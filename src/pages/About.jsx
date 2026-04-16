@@ -121,18 +121,24 @@ const About = () => {
       </Reveal>
 
       {selected && (
-        <div
-          className="fixed inset-0 z-[999] flex items-center justify-center bg-black/90"
-          onClick={() => setSelected(null)}
-        >
-          <div className="relative w-full max-w-3xl px-4">
+        <div className="fixed inset-0 z-[999] bg-black/90 flex items-center justify-center">
+          {/* CLOSE BUTTON */}
+          <button
+            onClick={() => setSelected(null)}
+            className="absolute top-6 right-6 text-white text-3xl font-bold hover:text-green-400 transition"
+          >
+            ✕
+          </button>
+
+          {/* CONTENT */}
+          <div className="relative max-w-3xl w-full px-4">
             <img
               src={selected.image}
               alt={selected.name}
-              className="max-h-[80vh] w-full rounded-xl object-contain"
+              className="w-full max-h-[80vh] object-contain rounded-xl"
             />
 
-            <p className="mt-4 text-center text-lg font-semibold text-white">
+            <p className="text-white text-center mt-4 text-lg font-semibold">
               {selected.name}
             </p>
           </div>

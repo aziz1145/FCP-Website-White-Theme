@@ -10,6 +10,7 @@ import person9 from "../team/Person 9.png";
 import person10 from "../team/Person 10.png";
 import person11 from "../team/Person 11.png";
 import person12 from "../team/Person 12.png";
+import person13 from "../team/Person 13.png";
 
 export const teamMembers = [
   { name: "Syed Sohail Athar", image: person1 },
@@ -24,4 +25,7 @@ export const teamMembers = [
   { name: "Tehniyat Javaid", image: person10 },
   { name: "Toqeer Hussain", image: person11 },
   { name: "Muhammad Aziz Ahmed", image: person12 },
+  { name: "Muhammad Yameen Fareed", image: person13 },
+
+
 ];
