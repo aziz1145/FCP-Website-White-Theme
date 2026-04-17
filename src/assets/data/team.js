@@ -23,7 +23,7 @@ export const teamMembers = [
   { name: "Ali Talib Hashmi", image: person7 },
   { name: "Naveed Hanif", image: person8 },
   { name: "Badih Uz Zaman Haseeb", image: person9 },
-  { name: "< TJ >", image: person10 },
+  { name: "Tehniyat Javed", image: person10 },
   { name: "Toqeer Hussain", image: person11 },
   { name: "Muhammad Yameen Fareed", image: person12 },
   { name: "Muhammad Aziz Ahmed", image: person13 },
