@@ -12,6 +12,8 @@ import person11 from "../team/Person 11.png";
 import person12 from "../team/Person 12.png";
 import person13 from "../team/Person 13.png";
 import person14 from "../team/Person 14.png";
+import person15 from "../team/Person 15.png";
+import person16 from "../team/Person 16.png";
 
 export const teamMembers = [
   { name: "Syed Sohail Athar", image: person1 },
@@ -23,9 +25,11 @@ export const teamMembers = [
   { name: "Ali Talib Hashmi", image: person7 },
   { name: "Naveed Hanif", image: person8 },
   { name: "Badih Uz Zaman Haseeb", image: person9 },
-  { name: "Tehniyat Javaid < TJ >", image: person10 },
+  { name: "< TJ >", image: person10 },
   { name: "Toqeer Hussain", image: person11 },
   { name: "Muhammad Yameen Fareed", image: person12 },
   { name: "Muhammad Aziz Ahmed", image: person13 },
-  { name: "Muhammad Waqar Aziz", image: person14 },
+  { name: "Aziz Fatima", image: person14 },
+  { name: "Muhammad Waqar Aziz", image: person15 },
+  { name: "Omar Hameed", image: person16 },
 ];
