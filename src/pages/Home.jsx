@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import logo from "../assets/FCP logo.png";
 import Counter from "../components/Counter";
 import Reveal from "../components/Reveal";
+import PartnersMarquee from "../components/PartnersMarquee";
 
 const Home = () => {
   return (
@@ -361,7 +362,7 @@ const Home = () => {
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a
-                href="https://wa.me/923214067783"
+                href="https://wa.me/923228006622"
                 target="_blank"
                 rel="noreferrer"
                 className="premium-btn bg-white text-green-700 hover:bg-slate-100"
@@ -399,6 +400,7 @@ const Home = () => {
           </div>
         </section>
       </Reveal>
+      <PartnersMarquee />
     </div>
   );
 };

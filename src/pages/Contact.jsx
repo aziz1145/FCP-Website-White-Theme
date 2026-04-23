@@ -23,7 +23,7 @@ const Contact = () => {
               <div>
                 <p className="text-sm text-slate-500 mb-1">Phone / WhatsApp</p>
                 <p className="text-lg font-semibold text-slate-900">
-                  +92 321 4067783
+                  +92 322 8006622
                 </p>
               </div>
 
@@ -57,7 +57,7 @@ const Contact = () => {
 
             <div className="flex flex-col gap-4">
               <a
-                href="https://wa.me/923214067783"
+                href="https://wa.me/923228006622"
                 target="_blank"
                 rel="noreferrer"
                 className="premium-btn premium-btn-primary"

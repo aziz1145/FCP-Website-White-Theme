@@ -22,7 +22,7 @@ const Support = () => {
           </p>
 
           <a
-            href="https://wa.me/923214067783"
+            href="https://wa.me/923228006622"
             target="_blank"
             rel="noreferrer"
             className="premium-btn premium-btn-primary"
