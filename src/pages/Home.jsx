@@ -25,7 +25,7 @@ const Home = () => {
         </div>
 
         <h1 className="text-4xl md:text-6xl font-bold text-green-600 mb-4 leading-tight">
-          Friends Club Pakistan Welfare Foundation
+          FCP Welfare Foundation
         </h1>
 
         <p className="text-lg md:text-xl mb-2 text-slate-700">

@@ -7,7 +7,7 @@ const Contact = () => {
             Contact Us
           </h1>
           <p className="text-slate-600 max-w-3xl mx-auto leading-7">
-            Get in touch with Friends Club Pakistan Welfare Foundation for
+            Get in touch with FCP Welfare Foundation for
             support, collaboration, volunteering, or general inquiries.
           </p>
         </div>
@@ -30,7 +30,7 @@ const Contact = () => {
               <div>
                 <p className="text-sm text-slate-500 mb-1">Email</p>
                 <p className="text-lg font-semibold text-slate-900">
-                  Info@friendsclub.org.pk
+                  Info@fcpwelfarefoundation.org.pk
                 </p>
               </div>
 
@@ -66,7 +66,7 @@ const Contact = () => {
               </a>
 
               <a
-                href="mailto:Info@friendsclub.org.pk"
+                href="mailto:Info@fcpwelfarefoundation.org.pk"
                 className="premium-btn premium-btn-outline"
               >
                 Send Email

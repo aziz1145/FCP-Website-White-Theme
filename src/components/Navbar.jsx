@@ -63,7 +63,7 @@ const Navbar = () => {
 
             <div className="leading-tight">
               <span className="block text-sm font-bold text-white md:text-base">
-                Friends Club Pakistan
+                FCP Welfare Foundation
               </span>
               <span className="block text-xs text-green-400 md:text-sm">
                 Welfare Foundation

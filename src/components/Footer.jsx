@@ -8,7 +8,7 @@ const Footer = () => {
           {/* NGO Info */}
           <div>
             <h2 className="mb-3 text-lg font-bold text-white">
-              Friends Club Pakistan
+              FCP Welfare Foundation
             </h2>
             <p className="mb-3 text-sm text-green-400">Welfare Foundation</p>
             <p className="mx-auto max-w-xs text-sm leading-6 text-slate-300">
@@ -112,7 +112,7 @@ const Footer = () => {
 
               {/* Email */}
               <a
-                href="mailto:Info@friendsclub.org.pk"
+                href="mailto:Info@fcpwelfarefoundation.org.pk"
                 className="text-slate-300 hover:text-green-400 transition transform hover:scale-110"
               >
                 <svg
@@ -133,7 +133,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-slate-400">
-          © Friends Club Pakistan Welfare Foundation. All rights reserved.
+          © FCP Welfare Foundation. All rights reserved.
         </div>
       </div>
     </footer>

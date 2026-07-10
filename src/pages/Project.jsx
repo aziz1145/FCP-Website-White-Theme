@@ -124,7 +124,7 @@ const Projects = () => {
           </h1>
 
           <p className="mx-auto max-w-3xl leading-7 text-slate-600">
-            Since 2005, Friends Club Pakistan Welfare Foundation has continued
+            Since 2005, FCP Welfare Foundation has continued
             serving communities through hunger relief, family welfare, medical
             support, emergency response, and community-focused initiatives
             carried out with sincerity and commitment.

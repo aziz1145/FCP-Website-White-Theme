@@ -19,7 +19,7 @@ const About = () => {
             </p>
 
             <p className="mx-auto max-w-3xl leading-7 text-slate-600">
-              Friends Club Pakistan Welfare Foundation is committed to serving
+              FCP Welfare Foundation is committed to serving
               humanity through welfare initiatives, relief efforts, and
               community support programs across Pakistan.
             </p>
